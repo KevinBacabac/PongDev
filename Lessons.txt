@@ -1,0 +1,4 @@
+Lesson 1 - https://docs.google.com/presentation/d/1gBwZ_otfLSIn8XHn86EnhBAYyvwhVLjouxT0EXscgd0/edit?usp=sharing
+- Review Python
+- Introduction to Pygame
+- Understand the event loop
