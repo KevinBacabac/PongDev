@@ -6,3 +6,7 @@ Lesson 1 - https://docs.google.com/presentation/d/1gBwZ_otfLSIn8XHn86EnhBAYyvwhV
 Lesson 2 - https://docs.google.com/presentation/d/1vjsKwPFz2Sd4b09c9b8JjSP6sIHQfBMh41TI3dnYDB8/edit?usp=sharing
 - Drawing rectangles
 - Simple movement
+
+Lesson 3 - https://docs.google.com/presentation/d/1wdPAGzvDpLJ1LLpLdmbAzPafoDzskStUAv-eglXWjMU/edit?usp=sharing
+- Controls
+- Physics
