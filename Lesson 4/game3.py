@@ -17,14 +17,26 @@ FPS = 60
 clock = pygame.time.Clock()
 
 # Define our objects
-PADDLE_WIDTH = 10
-PADDLE_HEIGHT = 100
-paddle = pygame.Rect(20, 20, PADDLE_WIDTH, PADDLE_HEIGHT)
+class Paddle:
+    WIDTH = 10
+    HEIGHT = 100
+
+    def __init__(self, x, y):
+        self.rect = pygame.Rect(x, y, self.WIDTH, self.HEIGHT)
+
+    def check_bounds(self, SIZE):
+        self.rect.top = max(self.rect.top, 0)
+        self.rect.bottom = min(self.rect.bottom, SIZE[1])
+
+    def draw(self, window):
+        pygame.draw.rect(window, pygame.Color("White"), self.rect)
+
+left_paddle = Paddle(20, 20)
 
 BALL_SIZE = 10
-ball = pygame.Rect(100, 200, BALL_SIZE, BALL_SIZE)
+ball = pygame.Rect(200, 200, BALL_SIZE, BALL_SIZE)
 ballDx = -2
-ballDy = 1
+ballDy = 6
 
 # Controls
 move_up = False
@@ -46,19 +58,31 @@ while True:
 
     # Physics will go here
     if move_up:
-        paddle.y -= 5
+        left_paddle.rect.y -= 5
     elif move_down:
-        paddle.y += 5
+        left_paddle.rect.y += 5
 
+    # Stay within the screen
+    left_paddle.check_bounds(SIZE)
+
+    # Move the ball
     ball.x += ballDx
     ball.y += ballDy
 
-    if ball.colliderect(paddle) and ballDx < 0:
+    # Ball hits paddle
+    if ball.colliderect(left_paddle.rect) and ballDx < 0:
         ballDx *= -1
+
+    # Ball leaves screen
+    if ball.top < 0 and ballDy < 0:
+        ballDy *= -1
+
+    if ball.bottom > 600 and ballDy > 0:
+        ballDy *= -1
 
     # Drawing
     window.fill(pygame.Color("Black"))
-    pygame.draw.rect(window, pygame.Color("White"), paddle)
+    left_paddle.draw(window)
     pygame.draw.rect(window, pygame.Color("White"), ball)
 
     # Show the new frame
