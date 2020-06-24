@@ -11,7 +11,8 @@ SIZE = (800, 600)
 window = pygame.display.set_mode(SIZE)
 
 # Control the frame rate
-FPS = 30
+FPS = 60
+
 # A special variable that will pause each frame
 clock = pygame.time.Clock()
 
@@ -23,7 +24,7 @@ while True:
             pygame.quit()
             sys.exit(0)
 
-    # Physics will go here
+    # Physics will go here in Lesson 2
 
     # Drawing
     window.fill(pygame.Color("Black"))

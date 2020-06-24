@@ -55,7 +55,6 @@ while True:
 
     if ball.colliderect(paddle) and ballDx < 0:
         ballDx *= -1
-        
 
     # Drawing
     window.fill(pygame.Color("Black"))

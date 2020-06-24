@@ -11,7 +11,7 @@ SIZE = (800, 600)
 window = pygame.display.set_mode(SIZE)
 
 # Control the frame rate
-FPS = 30
+FPS = 60
 
 # A special variable that will pause each frame
 clock = pygame.time.Clock()
